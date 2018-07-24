@@ -1,0 +1,15 @@
+<h1>Authors Homepage</h1>
+<% @authors.each do |author| %>
+  <div>
+  <h2>Author Firstname:<%= author.first_name %></h2>
+  <h2>Author Surname:<%= author.last_name %></p>
+  <h2><% author.books.each do |books| %>
+  <h2>Book Title:  <%= books.title %></h2>
+  <h3>Book Page Number:<%= books.page_number %></h3>
+  <h3>Book description:<%= books.description %></h3>
+
+  <%end%>
+
+
+  </div>
+<% end %>
