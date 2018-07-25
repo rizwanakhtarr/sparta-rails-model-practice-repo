@@ -1,4 +1,4 @@
-<h1>Authors Homepage</h1>
+<!-- <h1>Authors Homepage</h1>
 <% @authors.each do |author| %>
   <div>
   <h2>Author Firstname:<%= author.first_name %></h2>
@@ -11,5 +11,26 @@
   <%end%>
 
 
+  </div>
+<% end %> -->
+
+
+
+<h1>Authors Home Page</h1>
+<% @authors.each do |author| %>
+  <div>
+  <hr>
+  <h2>Name:<%= author.first_name %> <%= author.last_name %></h2>
+  <h2><% author.books.each do |books| %>
+  <h2>Book Title:  <%= books.title %></h2>
+  <h3>Book Page Number:<%= books.page_number %></h3>
+  <h3>Book description:<%= books.description %></h3>
+
+  <% end %>
+  <hr>
+  <%= link_to 'Show', author_path(author) %>
+  <%= link_to 'Edit', edit_author_path(author) %>
+  <%= link_to 'Destroy', author_path(author) %>
+  <%= link_to 'New', new_author_path %>
   </div>
 <% end %>
